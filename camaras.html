@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cámaras - Reconocimiento Facial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="top-bar">
+        <h1>Gestión de Cámaras</h1>
+    </header>
+    <section class="cameras">
+        <div class="camera-mosaic">
+            <video id="camera1" autoplay></video>
+            <video id="camera2" autoplay></video>
+            <video id="camera3" autoplay></video>
+            <video id="camera4" autoplay></video>
+            <video id="camera5" autoplay></video>
+            <video id="camera6" autoplay></video>
+        </div>
+    </section>
+    <script>
+        // Simular acceso a cámaras
+        const videoElements = document.querySelectorAll('video');
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                videoElements.forEach(video => {
+                    video.srcObject = stream;
+                });
+            })
+            .catch(error => {
+                console.error("No se pudo acceder a la cámara.", error);
+            });
+    </script>
+</body>
+</html>

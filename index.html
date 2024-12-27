@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Reconocimiento Facial</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Barra lateral -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>SEGURIDAD IA</h2>
+                <div class="username">
+                    <img src="https://via.placeholder.com/50" alt="User Avatar">
+                    <p>Administrador</p>
+                </div>
+            </div>
+            <nav class="menu">
+                <a href="#" class="menu-item active" data-view="dashboard">Dashboard</a>
+                <a href="camaras.html" target="_blank" class="mendu-item">Cámaras</a>
+                <a href="#" class="menu-item" data-view="reportes">Reportes</a>
+                <a href="#" class="menu-item" data-view="configuracion">Configuración</a>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <!-- Vista: Dashboard -->
+            <section class="view active" id="dashboardView">
+                <header class="top-bar">
+                    <h1>Dashboard - Sistema de Vigilancia</h1>
+                </header>
+                <section class="widgets">
+                    <!-- Gráfico de detección -->
+                    <div class="widget large">
+                        <h2>Detección de Incidencias (Últimas 24 Horas)</h2>
+                        <canvas id="lineChart"></canvas>
+                    </div>
+                    <!-- Estadísticas principales -->
+                    <div class="widget small">
+                        <h3>450</h3>
+                        <p>Rostros Detectados</p>
+                    </div>
+                    <div class="widget small">
+                        <h3>32</h3>
+                        <p>Alertas Generadas</p>
+                    </div>
+                    <div class="widget small">
+                        <h3>6</h3>
+                        <p>Cámaras Activas</p>
+                    </div>
+                </section>
+
+                <!-- Sección de Notificaciones -->
+                <section class="notifications">
+                    <h2>Notificaciones Recientes</h2>
+                    <ul>
+                        <li>[12:45 PM] - Rostro sospechoso detectado en Cámara 3.</li>
+                        <li>[12:30 PM] - Rostro reconocido como "Usuario Registrado".</li>
+                        <li>[12:15 PM] - Actividad inusual detectada en Cámara 1.</li>
+                        <li>[12:00 PM] - Alerta generada: Posible intruso.</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- Vista: Reportes -->
+            <section class="view" id="reportesView">
+                <header class="top-bar">
+                    <h1>Reportes de Seguridad</h1>
+                </header>
+                <div class="widget">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Rostros Detectados</th>
+                                <th>Alertas Generadas</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2024-12-01</td>
+                                <td>45</td>
+                                <td>5</td>
+                                <td><button>Ver Detalles</button></td>
+                            </tr>
+                            <tr>
+                                <td>2024-12-02</td>
+                                <td>30</td>
+                                <td>3</td>
+                                <td><button>Ver Detalles</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Vista: Configuración -->
+            <section class="view" id="configuracionView">
+                <header class="top-bar">
+                    <h1>Configuración del Sistema</h1>
+                </header>
+                <p>Aquí puedes configurar los ajustes del sistema, agregar usuarios y administrar cámaras.</p>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
